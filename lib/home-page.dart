@@ -30,17 +30,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           decoration: new BoxDecoration(color: _color),
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'Hey there',
-                  style: TextStyle(
-                    fontSize: 35.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
+            child: Text(
+              'Hey there',
+              style: TextStyle(
+                fontSize: 35.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
