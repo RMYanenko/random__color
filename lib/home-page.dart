@@ -1,5 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:random_color/screen.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -30,12 +32,23 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           decoration: new BoxDecoration(color: _color),
           child: Center(
-            child: Text(
-              'Hey there',
-              style: TextStyle(
-                fontSize: 35.0,
-                fontWeight: FontWeight.bold,
-              ),
+            child: SizedBox(
+              child: FadeAnimatedTextKit(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NextScrin(),
+                      ),
+                    );
+                  },
+                  text: ["Hey!", "Hey there!!!"],
+                  textStyle:
+                      TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.start,
+                  alignment:
+                      AlignmentDirectional.topStart // or Alignment.topLeft
+                  ),
             ),
           ),
         ),
@@ -43,3 +56,13 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+// onTap: () {
+//                     Navigator.push(
+//                       context,
+//                       MaterialPageRoute(
+//                         builder: (context) => NextScrin(),
+//                       ),
+//                     );
+//                   },
+//                   text: ['Hey there'],
